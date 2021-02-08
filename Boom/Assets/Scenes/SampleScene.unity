@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 1272735603}
   - component: {fileID: 1272735604}
   - component: {fileID: 1272735605}
+  - component: {fileID: 1272735606}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -282,8 +283,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272735600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.89, y: -0.01, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -7.414, y: -0.372, z: 0}
+  m_LocalScale: {x: 2.0483356, y: 1.7245846, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -308,7 +309,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!70 &1272735604
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -332,7 +333,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272735600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -354,6 +355,29 @@ PolygonCollider2D:
       - {x: -0.25, y: 0.25}
       - {x: 0.25, y: 0.25}
       - {x: 0.25, y: -0.25}
+--- !u!68 &1272735606
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272735600}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.24410117, y: 1.5733279}
+  - {x: -0.605994, y: -0.19285694}
+  - {x: -0.5884554, y: -1.7806724}
+  - {x: 0.12691881, y: -0.37545317}
+  - {x: 0.65588516, y: 0.49351463}
+  - {x: 0.32595468, y: 0.77329695}
+  - {x: 1.2451183, y: 1.5375707}
 --- !u!1 &1769580098
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,9 +388,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1769580100}
   - component: {fileID: 1769580099}
-  - component: {fileID: 1769580102}
   - component: {fileID: 1769580101}
+  - component: {fileID: 1769580102}
   - component: {fileID: 1769580103}
+  - component: {fileID: 1769580104}
+  - component: {fileID: 1769580106}
+  - component: {fileID: 1769580105}
   m_Layer: 0
   m_Name: cannon
   m_TagString: Untagged
@@ -492,7 +519,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769580098}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -526,6 +553,72 @@ PolygonCollider2D:
       - {x: 0.32, y: 0.79999995}
       - {x: 0.089999996, y: 0.84}
       - {x: 0.089999996, y: 1.1999999}
+--- !u!58 &1769580104
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769580098}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000023841858, y: 0.121763945}
+  serializedVersion: 2
+  m_Radius: 0.7311189
+--- !u!68 &1769580105
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769580098}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.72990704, y: 0.09916037}
+  - {x: -0.73282576, y: 0.17648888}
+  - {x: -0.6626239, y: 0.42370772}
+  - {x: -0.5520992, y: 0.60416317}
+  - {x: -0.3428135, y: 0.76769686}
+  - {x: -0.084593296, y: 0.8480947}
+  - {x: -0.08459473, y: 1.202702}
+  - {x: 0.0953598, y: 1.202499}
+  - {x: 0.09422016, y: 0.84674406}
+  - {x: 0.38477802, y: 0.737159}
+  - {x: 0.5564327, y: 0.5914881}
+  - {x: 0.5564327, y: 0.5914881}
+  - {x: 0.7227316, y: 0.23028469}
+  - {x: 0.7205219, y: 0.074747324}
+  - {x: 0.6389675, y: 0.06399107}
+  - {x: 0.0070900917, y: 0.018976688}
+  - {x: -0.43777704, y: 0.039146423}
+  - {x: -0.72585297, y: 0.09390032}
+--- !u!70 &1769580106
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769580098}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.012131214, y: 0.16447234}
+  m_Size: {x: 1.437974, y: 1.437974}
+  m_Direction: 0
 --- !u!1 &1805942978
 GameObject:
   m_ObjectHideFlags: 0
