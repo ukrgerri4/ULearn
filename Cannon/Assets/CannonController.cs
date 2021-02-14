@@ -11,6 +11,7 @@ public class CannonController : MonoBehaviour
     public GameObject pivotPoint;
     public GameObject barrelStart;
     public GameObject barrel;
+    public GameObject projectileSpawn;
     public float direction = 0.0f;
 
     void Update()

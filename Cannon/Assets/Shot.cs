@@ -14,6 +14,6 @@ public class Shot : MonoBehaviour
 
     public void ShotHandler(CannonController controller)
     {
-        Instantiate(shell, controller.barrelStart.transform.position + new Vector3(1, 1, 0), controller.barrel.transform.rotation);
+        Instantiate(shell, controller.projectileSpawn.transform.position, controller.barrel.transform.rotation);
     }
 }

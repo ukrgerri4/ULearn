@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
+
+    public GameObject pivotPoint;
+    public GameObject barrelStart;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(rb.centerOfMass);
-        rb.centerOfMass = new Vector2(1,1);
-        rb.AddForce(new Vector2(1, 1) * 5, ForceMode2D.Impulse);
+        pivotPoint = GameObject.Find("Rotate");
+        barrelStart = GameObject.Find("BarrelStart");
+
+        //Debug.Log(rb.centerOfMass);
+        //rb.centerOfMass = new Vector2(1,1);
+        var v = (barrelStart.transform.position - pivotPoint.transform.position).normalized;
+        rb.AddForce(v * 6, ForceMode2D.Impulse);
         Destroy(gameObject, 5f);
+    }
+
+    private void FixedUpdate()
+    {
+        // update the rotation of the projectile during trajectory motion
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, rb.velocity);
     }
 }
